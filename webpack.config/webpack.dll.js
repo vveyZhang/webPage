@@ -1,5 +1,6 @@
-var webpack = require('webpack');
-var vendors = [
+const webpack = require('webpack');
+const help=require('./helper')
+const vendors = [
     'react',
     'react-dom',
     'react-router',
@@ -16,7 +17,7 @@ var vendors = [
 
 module.exports = {
     output: {
-        path: './src/lib',
+        path: help.root('src/lib'),
         filename: '[name].[chunkhash].js',
         library: '[name]_[chunkhash]'
     },

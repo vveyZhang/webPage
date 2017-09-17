@@ -2,8 +2,7 @@ var  webpack=require('webpack');
 var helper=require("./helper");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extractStyle = new ExtractTextPlugin({
-    filename: "style.css",
-    disable: process.env.NODE_ENV === "development"
+    filename: "style.css"
 });
 module.exports={
     devtool:"nosources-source-map",
@@ -15,11 +14,11 @@ module.exports={
         filename:'app.js'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
-            loaders: ['babel']
+            use: 'babel-loader'
         }, {
-            test: /\.css$/,
+            test: /\.(css|less)$/,
             loader:extractStyle.extract({
                 use: [{
                     loader: "css-loader"
@@ -31,7 +30,7 @@ module.exports={
             exclude:path.resolve(__dirname,'node_modules'),
         },{
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+            use: 'url-loader?limit=50000&name=[path][name].[ext]'
         },
         ]
     },
@@ -53,9 +52,8 @@ module.exports={
                 warnings: false
             }
         }),
-
     ],
     resolve: {
-        extensions: ['', '.js', '.json','.css','html']
+        extensions: ['.js', '.json','.css','html']
     }
 };

@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
+import './common.css';
 export default  class App extends Component{
     render(){
         return(
-            <div>hello</div>
+            <div>{this.props.children}</div>
         )
     }
 }
