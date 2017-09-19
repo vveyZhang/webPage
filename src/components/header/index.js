@@ -1,16 +1,18 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router';
 import { Button } from 'antd';
+import $ from 'jquery'
 export default class Header extends Component{
     render(){
         return(
-            <div className="header">
+            <div className="header" ref="header">
+
                 <div className="container">
                     <ul className="header-nav">
-                        <li><Link activeClassName="cur" to="/">Home</Link></li>
-                        <li><Link activeClassName="cur"  to="/article">Article</Link></li>
-                        <li><Link activeClassName="cur"  to="/article">Tool</Link></li>
-                        <li><Link activeClassName="cur"  to="/about">About</Link></li>
+                        <li><Link activeClassName="cur" to="/home">首页</Link></li>
+                        <li><Link activeClassName="cur"  to="/article">前端</Link></li>
+                        <li><Link activeClassName="cur"  to="/source">资源分享</Link></li>
+                        <li><Link activeClassName="cur"  to="/me">关于我</Link></li>
                     </ul>
                     <div className="header-search">
                         <input type="text"/>

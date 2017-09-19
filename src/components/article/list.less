@@ -1,0 +1,73 @@
+.article-list-banner{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.article-list-container{
+  margin-top: 50px;
+  >.container{
+    padding: 30px 10px;
+    background-color: #ffffff;
+  }
+
+}
+.list-container{
+  width: 800px;
+}
+.recommend-container{
+  width: 300px;
+  >.title{
+    height: 30px;
+    padding-left: 28px;
+    border-left: 2px solid #dedede;
+    font-size: 20px;
+    line-height: 30px;
+    color: #333333;
+  }
+  >ul{
+    margin-top: 30px;
+    >li{
+      line-height: 24px;
+      font-size: 15px;
+      max-height: 48px;
+      overflow: hidden;
+      padding-left: 30px;
+      background: url("/images/li-icon.png") no-repeat left 5px;
+      a{
+        color: #333333;
+        &:hover{
+          color: #f04134;
+          text-decoration: underline;
+        }
+      }
+  }
+  }
+}
+.custom-page{
+  text-align: center;
+  padding: 20px 0px;
+  .ant-pagination-item{
+    background-color: transparent;
+    a{
+      color: #333;
+    }
+  }
+  .ant-pagination-prev:focus .ant-pagination-item-link, .ant-pagination-next:focus .ant-pagination-item-link, .ant-pagination-prev:hover .ant-pagination-item-link, .ant-pagination-next:hover .ant-pagination-item-link{
+    color: #f04134;
+    border-color: #f04134;
+  }
+  .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+    background-color: transparent;
+    color: #333333;
+  }
+  .ant-pagination-item:focus, .ant-pagination-item:hover{
+    border-color: #f04134;
+  }
+  .ant-pagination-item-active{
+    border-color: #f04134;
+    background-color: #f04134;
+    a{
+      color: #ffffff;
+    }
+  }
+}

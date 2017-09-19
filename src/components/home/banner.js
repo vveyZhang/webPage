@@ -1,20 +1,13 @@
 import React,{Component} from 'react';
 import $ from '../../common.js';
-import bg from '../../images/home-bg.jpg';
 import Header from '../header/index.js'
 import {Icon} from 'antd'
-import github from '../../images/github.png';
-import qq from '../../images/QQ.png';
-import timg from '../../images/timg.png';
-import wechat from '../../images/wechatIcon.png';
-import wechatCode from '../../images/wecode.png';
-import qqcode from '../../images/qrcode.jpg';
 export default class HomeBanner extends Component{
     componentDidMount(){
         let moveX=null,moveY=null;
         const $bg=$(this.refs.bg);
         const $banner=$(this.refs.banner);
-        const $content=$(this.refs.content)
+        const $content=$(this.refs.content);
         const top=$content.position().top;
         const bannerH=$banner.height();
         const contentH=$content.height();
@@ -42,32 +35,38 @@ export default class HomeBanner extends Component{
                     $content.css({top:scrollTop/2+top})
                 },1)
             }
-        })
+        });
+    }
+    componentWillUnmount(){
+        const $bg=$(this.refs.bg);
+        const $banner=$(this.refs.banner);
+        $bg.off();
+        $banner.off();
+        $(window).off();
     }
     render(){
         return(
             <div className="home-banner" ref="banner">
-                <Header></Header>
                 <div className="home-banner-content"  ref="content">
                     <div className="banner-content">
                         <div className="banner-link-container">
                             <div className="btn">
-                                <a target="_blank"  href="https://github.com/vveyZhang" className="icon"><img src= {github} alt=""/></a>
+                                <a target="_blank"  href="https://github.com/vveyZhang" className="icon"><img src="/images/github.png" alt=""/></a>
                             </div>
                             <div className="btn">
-                                <a target="_blank" href="https://git.oschina.net/helloxwz" className="icon"><img src={timg} alt=""/></a>
-                            </div>
-                            <div className="btn">
-                                <div className="code">
-                                    <img src={wechatCode} alt=""/>
-                                </div>
-                                <a href="javascript:void(0)" className="icon"><img src={wechat} alt=""/></a>
+                                <a target="_blank" href="https://git.oschina.net/helloxwz" className="icon"><img src="/images/timg.png" alt=""/></a>
                             </div>
                             <div className="btn">
                                 <div className="code">
-                                    <img src={qqcode} alt=""/>
+                                    <img src='/images/wecode.png' alt=""/>
                                 </div>
-                                <a href="javascript:void(0)" className="icon"><img src={qq} alt=""/></a>
+                                <a href="javascript:void(0)" className="icon"><img src="/images/wechatIcon.png" alt=""/></a>
+                            </div>
+                            <div className="btn">
+                                <div className="code">
+                                    <img src="/images/qrcode.jpg" alt=""/>
+                                </div>
+                                <a href="javascript:void(0)" className="icon"><img src="/images/QQ.png" alt=""/></a>
                             </div>
                         </div>
                         <div className="banner-welcome animate" ref="welcome">

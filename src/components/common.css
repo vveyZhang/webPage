@@ -2,6 +2,9 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 ul,ol{list-style:none;}
 a{text-decoration:none;color: #333333}
 a:hover{color: #0397ed}
+a:focus{
+    text-decoration: none!important;
+}
 img{border:0;vertical-align:middle;}
 input,button{vertical-align:middle;outline:none;border:none;}
 textarea{outline:none;border:none;resize:none;}
@@ -20,7 +23,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .rt{float:right;}
 .lf{float: left;}
-body{color: #000;font-family: "Microsoft YaHei";}
+body{color: #000;font-family: "Microsoft YaHei";background-color: #f2f2f2!important;}
 /*清除浮动*/
 .clearfix{*zoom:1;} /* 针对IE7 hack，触发IE7的haslayout，以清除浮动 */
 .clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
@@ -40,4 +43,19 @@ table tr td,table{border-collapse:collapse;}
 #root{
     overflow: hidden;
     background-color: #f2f2f2
+}
+.footer{
+    height: 80px;
+    text-align: center;
+    padding: 8px 0px;
+    margin-top: 40px;
+}
+.footer p{
+    line-height: 32px;
+    font-size: 14px;
+    color: #666666;
+}
+.fixPos {
+    position: fixed;/* 解决CHROME不闪动的问题,不信你删了试试! */
+    visibility:hidden;
 }

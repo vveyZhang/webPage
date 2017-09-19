@@ -1,7 +1,7 @@
 import React from "react";
 import {render} from 'react-dom';
 import Root from './root/Root.js';
-import configureStore from './store/configureStore';
+import configureStore from './store/configureStore.js';
 const rtElement=document.getElementById('root');
 const store=configureStore();
 try{

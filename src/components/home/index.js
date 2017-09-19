@@ -4,7 +4,8 @@ import './home.less';
 import {Link} from 'react-router'
 import {Icon} from 'antd'
 import ArticleItem from '../article/item.js';
-import SourecItem from '../source/item.js';
+import SourceItem from '../source/item.js';
+import Footer from '../footer.js'
 export default class Home extends Component{
     render(){
         return(<div className="blog-home">
@@ -13,7 +14,7 @@ export default class Home extends Component{
                 <div className="home-title">
                   <Link className="more">更多<Icon type="plus" /></Link>  爬坑 ———— You jump, I jump
                 </div>
-                <div className="home-list">
+                <div className="home-list home-list-article">
                     <ArticleItem></ArticleItem>
                     <ArticleItem></ArticleItem>
                     <ArticleItem></ArticleItem>
@@ -23,18 +24,19 @@ export default class Home extends Component{
                 </div>
                 <div className="home-list">
                     <div className="home-list-source">
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
-                        <SourecItem></SourecItem>
+                        <SourceItem content={"测试内容测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容测试内容测试"} ></SourceItem>
+                        <SourceItem content={"测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容"} ></SourceItem>
+                        <SourceItem content={"测试内容"} ></SourceItem>
                     </div>
 
                 </div>
             </div>
-
+            <Footer></Footer>
         </div>
         )
     }
