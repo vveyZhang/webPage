@@ -3,10 +3,14 @@ import {Link} from 'react-router';
 import { Button } from 'antd';
 import $ from 'jquery'
 export default class Header extends Component{
+    componentDidMount(){
+        $('.header-nav li').click(function(){
+            $('html,body').animate({'scrollTop':0})
+        })
+    }
     render(){
         return(
             <div className="header" ref="header">
-
                 <div className="container">
                     <ul className="header-nav">
                         <li><Link activeClassName="cur" to="/home">首页</Link></li>
